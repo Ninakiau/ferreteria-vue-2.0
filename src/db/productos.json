@@ -1,0 +1,164 @@
+{
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Clavos de Acero",
+            "tipo": "Clavos",
+            "precio": 100,
+            "descripcion": "Clavos de acero de 2 pulgadas, resistentes y duraderos.",
+            "stock": 5000
+        },
+        {
+            "id": 2,
+            "nombre": "Martillo de Carpintero",
+            "tipo": "Herramientas",
+            "precio": 5000,
+            "descripcion": "Martillo de carpintero con mango de madera, ideal para trabajos de construcción.",
+            "stock": 150
+        },
+        {
+            "id": 3,
+            "nombre": "Pintura Blanca",
+            "tipo": "Pinturas",
+            "precio": 20000,
+            "descripcion": "Pintura blanca de alta calidad, perfecta para interiores y exteriores.",
+            "stock": 300
+        },
+        {
+            "id": 4,
+            "nombre": "Destornillador de Estrella",
+            "tipo": "Herramientas",
+            "precio": 2500,
+            "descripcion": "Destornillador de estrella con mango ergonómico, ideal para trabajos detallados.",
+            "stock": 200
+        },
+        {
+            "id": 5,
+            "nombre": "Llave Inglesa",
+            "tipo": "Herramientas",
+            "precio": 7500,
+            "descripcion": "Llave inglesa ajustable, perfecta para diversas aplicaciones.",
+            "stock": 100
+        },
+        {
+            "id": 6,
+            "nombre": "Cinta Adhesiva",
+            "tipo": "Accesorios",
+            "precio": 1500,
+            "descripcion": "Cinta adhesiva de alta resistencia, ideal para reparaciones y manualidades.",
+            "stock": 500
+        },
+        {
+            "id": 7,
+            "nombre": "Tornillos para Madera",
+            "tipo": "Tornillos",
+            "precio": 50,
+            "descripcion": "Tornillos de acero para madera de 1 pulgada, perfectos para trabajos de carpintería.",
+            "stock": 8000
+        },
+        {
+            "id": 8,
+            "nombre": "Taladro Eléctrico",
+            "tipo": "Herramientas Eléctricas",
+            "precio": 45000,
+            "descripcion": "Taladro eléctrico con múltiples velocidades, ideal para perforaciones precisas.",
+            "stock": 50
+        },
+        {
+            "id": 9,
+            "nombre": "Brochas para Pintura",
+            "tipo": "Pinturas",
+            "precio": 2000,
+            "descripcion": "Brochas de diferentes tamaños, perfectas para aplicar pintura de manera uniforme.",
+            "stock": 300
+        },
+        {
+            "id": 10,
+            "nombre": "Cinta Métrica",
+            "tipo": "Medición",
+            "precio": 3000,
+            "descripcion": "Cinta métrica de 5 metros, con bloqueo automático y fácil lectura.",
+            "stock": 150
+        },
+        {
+            "id": 11,
+            "nombre": "Sierra Manual",
+            "tipo": "Herramientas",
+            "precio": 8000,
+            "descripcion": "Sierra manual de 20 pulgadas, ideal para cortar madera y otros materiales.",
+            "stock": 80
+        },
+        {
+            "id": 12,
+            "nombre": "Tijeras para Chapa",
+            "tipo": "Herramientas",
+            "precio": 6000,
+            "descripcion": "Tijeras para cortar chapa, con mangos ergonómicos y cuchillas afiladas.",
+            "stock": 120
+        },
+        {
+            "id": 13,
+            "nombre": "Alicate Universal",
+            "tipo": "Herramientas",
+            "precio": 3500,
+            "descripcion": "Alicate universal con mango antideslizante, ideal para diversas tareas de sujeción.",
+            "stock": 200
+        },
+        {
+            "id": 14,
+            "nombre": "Guantes de Trabajo",
+            "tipo": "Accesorios",
+            "precio": 2000,
+            "descripcion": "Guantes de trabajo resistentes, perfectos para proteger tus manos en todo tipo de trabajos.",
+            "stock": 300
+        },
+        {
+            "id": 15,
+            "nombre": "Lijadora Eléctrica",
+            "tipo": "Herramientas Eléctricas",
+            "precio": 35000,
+            "descripcion": "Lijadora eléctrica con control de velocidad, ideal para acabados finos en madera.",
+            "stock": 60
+        },
+        {
+            "id": 16,
+            "nombre": "Mascarilla de Protección",
+            "tipo": "Accesorios",
+            "precio": 1000,
+            "descripcion": "Mascarilla de protección contra polvo y partículas, esencial para trabajos de construcción.",
+            "stock": 500
+        },
+        {
+            "id": 17,
+            "nombre": "Nivel de Burbuja",
+            "tipo": "Medición",
+            "precio": 4000,
+            "descripcion": "Nivel de burbuja de 24 pulgadas, perfecto para nivelar superficies con precisión.",
+            "stock": 100
+        },
+        {
+            "id": 18,
+            "nombre": "Cuter",
+            "tipo": "Herramientas",
+            "precio": 1500,
+            "descripcion": "Cuter con cuchillas reemplazables, ideal para cortar materiales de manera precisa.",
+            "stock": 400
+        },
+        {
+            "id": 19,
+            "nombre": "Flexómetro",
+            "tipo": "Medición",
+            "precio": 3500,
+            "descripcion": "Flexómetro de 3 metros, con gancho magnético y cinta resistente.",
+            "stock": 200
+        },
+        {
+            "id": 20,
+            "nombre": "Cerradura de Seguridad",
+            "tipo": "Accesorios",
+            "precio": 10000,
+            "descripcion": "Cerradura de seguridad para puertas, con alta resistencia y fácil instalación.",
+            "stock": 90
+        }
+    ]
+}

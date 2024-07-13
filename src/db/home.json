@@ -1,0 +1,62 @@
+{
+    "paginaHome": {
+        "nombre": "Ferretería Vue 2.0",
+        "direccion": "Avenida Caupolicán 1234, Temuco, Chile",
+        "telefonos": [
+            "+56912345678",
+            "+56987654321"
+        ],
+        "redes_sociales": {
+            "facebook": "https://facebook.com/ferreteriavue",
+            "instagram": "https://instagram.com/ferreteriavue",
+            "twitter": "https://twitter.com/ferreteriavue"
+        },
+        "contacto": {
+            "email": "contacto@ferreteriavue.com",
+            "sitio_web": "https://www.ferreteriavue.com"
+        },
+        "inventario": {
+            "costo_actual": {
+                "clavos": "10 CLP/unidad",
+                "martillo": "5000 CLP/unidad",
+                "pintura": "20000 CLP/galón"
+            },
+            "niveles_stock": {
+                "clavos": "5000 unidades",
+                "martillo": "150 unidades",
+                "pintura": "300 galones"
+            }
+        },
+        "proveedores": [
+            {
+                "nombre": "Proveedor de Clavos S.A.",
+                "contacto": "clavos@proveedores.com",
+                "telefono": "+56912345678"
+            },
+            {
+                "nombre": "Martillos y Herramientas",
+                "contacto": "martillos@proveedores.com",
+                "telefono": "+56987654321"
+            },
+            {
+                "nombre": "Pinturas y Más",
+                "contacto": "pinturas@proveedores.com",
+                "telefono": "+56911223344"
+            }
+        ],
+        "promociones": [
+            {
+                "nombre": "Descuento de Primavera",
+                "descripcion": "15% de descuento en todos los martillos",
+                "fecha_inicio": "2024-03-01",
+                "fecha_fin": "2024-05-31"
+            },
+            {
+                "nombre": "3x2 en Pintura",
+                "descripcion": "Lleva 3 galones de pintura por el precio de 2",
+                "fecha_inicio": "2024-07-01",
+                "fecha_fin": "2024-07-15"
+            }
+        ]
+    }
+}

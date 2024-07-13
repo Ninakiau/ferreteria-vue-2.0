@@ -1,0 +1,8 @@
+{
+    "registroUsuario": {
+        "nombre": "Carlos González",
+        "email": "carlos.gonzalez@ferreteriavue.com",
+        "password": "ferreteria123segura",
+        "telefono": "+56912345678"
+    }
+}
