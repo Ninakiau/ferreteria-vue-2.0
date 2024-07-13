@@ -3,9 +3,9 @@
         <button><router-link to="/home">Regresar al Home</router-link></button>
         <div>
             <h1>Listado de productos</h1>
-            <div v-for="(product, index) in productos" :key="product.id">
-                <router-link :to="'/products/' + product.id">
-                    <ProductCard :productType="product.tipo" :productName="product.nombre" :product="product" />
+            <div v-for="product in productos" :key="product.id">
+                <router-link :to="'/products/' + product.id" :product="product">
+                    <ProductCard :product="product"  />
                 </router-link>
             </div>
         </div>
