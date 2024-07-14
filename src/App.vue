@@ -5,7 +5,9 @@
     <router-link to="/register">Register</router-link> |
     <router-link to="/products">Productos</router-link>
   </nav>
-  <router-view/>
+  <div id="app">
+    <router-view/>
+  </div>
 </template>
 
 <style>
@@ -15,6 +17,11 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {

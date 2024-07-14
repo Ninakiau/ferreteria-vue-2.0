@@ -1,9 +1,12 @@
 <template>
-    <div class="product-card">
-      <h2>{{ product.nombre }}</h2>
-      <p> {{ product.tipo }}</p>
-      <!-- Otros detalles que desees mostrar en la lista de productos -->
+  <div class="product-card card">
+    <div class="card-header">
+      <h5>{{ product.nombre }}</h5>
     </div>
+    <div class="card-body">
+      <p> {{ product.tipo }}</p>
+    </div>
+  </div>
 </template>
 <script>
 export default {

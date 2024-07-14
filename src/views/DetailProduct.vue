@@ -1,32 +1,46 @@
 <template>
-    <div>
-      <button><router-link to="/products">Regresar a la lista de Productos</router-link></button>
-      <div>
-        <h1>Detalle Producto</h1>
-        <div v-if="product">
-          <h3>{{ product.tipo }}</h3>
-          <h3>{{ product.nombre }}</h3>
-          <p>{{ product.descripcion }}</p>
-          <p>{{ product.precio }}</p>
-          <p>{{ product.stock }}</p>
+  <div class="col-md-12 col-lg-12">
+    <Banner />
+    <button><router-link to="/products">Regresar a la lista de Productos</router-link></button>
+    <h1>Detalle Producto</h1>
+    <div class="card">
+      <div v-if="product" class="card">
+        <div class="card-header">
+          <h5>{{ product.tipo }}</h5>
         </div>
-        <div v-else>
-          <p>Cargando detalles del producto...</p>
+        <div class="card-body text-start">
+          <h5>{{ product.nombre }}</h5>
+          <p>{{ product.descripcion }}</p>
+          <div class="d-flex justify-content-between">
+            <p>Precio: {{ product.precio }}</p>
+            <p> Stock: {{ product.stock }}</p>
+          </div>
         </div>
       </div>
+      <div v-else>
+        <p>Cargando detalles del producto...</p>
+      </div>
     </div>
-  </template>
+    <FooterVue />
+  </div>
+</template>
 
 <script>
+import Banner from '@/components/Banner.vue';
+import FooterVue from '@/components/FooterVue.vue';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   props: {
-    id:{
+    id: {
       type: String,
       required: true
     },
 
+  },
+  components: {
+    Banner,
+    FooterVue
   },
   computed: {
     ...mapGetters(['getProductDetails']),

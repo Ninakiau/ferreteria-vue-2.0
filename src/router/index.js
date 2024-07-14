@@ -9,13 +9,12 @@ import ProductsView from '@/views/ProductsView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 
 
-// TODO: CAMBIAR REQUIRES AUTH FALSE POR TRUE
-
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta:{ requiresAuth: false }
   },
   {
     path: '/login',
@@ -44,7 +43,7 @@ const routes = [
     path: '/success',
     name: 'success',
     component: SuccesRegisterView,
-    meta:{ requiresAuth: true }
+    meta:{ requiresAuth: false }
   },
   {
     path: '/:catchAll(.*)',  // Ruta de que permite manejar un 404

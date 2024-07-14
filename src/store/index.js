@@ -14,8 +14,9 @@ export default createStore({
     authError: null, //Error de autentificación 
     productos: productos.productos, //Lista de productos extraida de db/productos.json,
     home: home.paginaHome, //Información requerida en la vista home,
-    registro, //Información requerida en la vista de registro,
-    successRegister, //Información requerida en la vista de exito de registro,
+    registro: registro, //Información requerida en la vista de registro,
+    registroErrors: [],
+    successRegister: null,
     productDetails: null  // Estado para almacenar los detalles del producto seleccionado
   },
   getters: {
@@ -30,7 +31,8 @@ export default createStore({
      direccion: state => state.home.direccion,
      telefonos: state => state.home.telefonos,
      registro: state => state.registro, //Obtenemos la información de la vista de registro
-     successRegister: state => state.successRegister, //Obtenemos la información de la vista de exito de registro,
+     registroErrors: state => state.registroErrors,
+     successRegister: state => state.successRegister,
      getProductDetails: state => (id) => {
       return state.productDetails;
     }
@@ -49,7 +51,16 @@ export default createStore({
     // Mutación para actualizar los detalles del producto
     SET_PRODUCT_DETAILS(state, product) {
       state.productDetails = product;
-    }
+    },
+    SET_REGISTRO_ERRORS(state, errors) {
+      state.registroErrors = errors;
+    },
+    CLEAR_REGISTRO_ERRORS(state) {
+      state.registroErrors = [];
+    },
+    SET_SUCCESS_REGISTER(state, success) {
+      state.successRegister = success;
+    },
 
     
   },
@@ -96,8 +107,43 @@ export default createStore({
         console.error('Error al obtener los detalles del producto:', error);
         // Manejar el error aquí si es necesario
       }
+    },
+    async register({ commit }, payload) {
+      try {
+        // Aquí puedes realizar la validación y la llamada al servicio REST
+        // Si hay errores de validación, actualiza el estado de errores
+        let errors = [];
+  
+        // Validaciones
+        if (!payload.telefono.match(/^\d{10}$/)) {
+          errors.push("Formato de teléfono inválido (debe tener 10 dígitos)");
+        }
+        if (payload.contrasena !== payload.repetirContrasena) {
+          errors.push("Las contraseñas no coinciden");
+        }
+        // Otras validaciones...
+  
+        if (errors.length > 0) {
+          commit('SET_REGISTRO_ERRORS', errors);
+        } else {
+          // Simulando una respuesta exitosa del servicio REST
+          const response = {
+            data: {
+              respuestaRegistro: {
+                status: 'success',
+                mensaje: 'Usuario registrado exitosamente en Ferretería Vue 2.0.'
+              }
+            }
+          };
+          commit('SET_SUCCESS_REGISTER', response.data.respuestaRegistro);
+          commit('CLEAR_REGISTRO_ERRORS');
+          router.push('/success');
+        }
+      } catch (error) {
+        // Manejo del error de la llamada al servicio
+        commit('SET_REGISTRO_ERRORS', ['Error al registrar el usuario']);
+      }
     }
-    
   },
   modules: {
   }
