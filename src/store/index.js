@@ -31,10 +31,10 @@ export default createStore({
      direccion: state => state.home.direccion,
      telefonos: state => state.home.telefonos,
      registro: state => state.registro, //Obtenemos la información de la vista de registro
-     registroErrors: state => state.registroErrors,
-     successRegister: state => state.successRegister,
+     registroErrors: state => state.registroErrors, //Obtenemos los errores de registro
+     successRegister: state => state.successRegister, //Obtenemos el estado de registro exitoso
      getProductDetails: state => (id) => {
-      return state.productDetails;
+      return state.productDetails; //Obtenemos los detalles del producto seleccionado
     }
   },
   mutations: {
@@ -52,12 +52,18 @@ export default createStore({
     SET_PRODUCT_DETAILS(state, product) {
       state.productDetails = product;
     },
+
+    // Mutación para establecer los errores de registro
     SET_REGISTRO_ERRORS(state, errors) {
       state.registroErrors = errors;
     },
+
+    // Mutación para limpiar los errores de registro y que no se muestren una vez que se hayan resuelto
     CLEAR_REGISTRO_ERRORS(state) {
       state.registroErrors = [];
     },
+
+    // Mutación para establecer el estado de registro exitoso
     SET_SUCCESS_REGISTER(state, success) {
       state.successRegister = success;
     },
@@ -87,31 +93,23 @@ export default createStore({
     // Acción para cargar los detalles del producto por su ID
     async fetchProductDetails({ commit, state }, id) {
       try {
-        console.log('Fetching product details for id:', id);
-    
-        // Simulando una llamada asíncrona para obtener los detalles del producto
-        // Aquí asumimos que `id` y los datos en `state.productos` son compatibles
-        console.log('Productos en el estado:', state.productos);
+        //Buscamos el producto por su ID, que se pasa como parámetro a través de la url
         const product = state.productos.find(product => product.id == id);
-    
+        
+        //si el producto es encontrado, lo seteamos en el estado
         if (product) {
-          console.log('Producto encontrado:', product);
-          // Commit para establecer los detalles del producto en el estado
           commit('SET_PRODUCT_DETAILS', product);
         } else {
           console.error('Producto no encontrado para el id:', id);
-          // Manejar el caso donde el producto no se encuentre
-          // Puedes establecer un estado de error o tomar otra acción según sea necesario
         }
       } catch (error) {
         console.error('Error al obtener los detalles del producto:', error);
-        // Manejar el error aquí si es necesario
+  o
       }
     },
     async register({ commit }, payload) {
       try {
-        // Aquí puedes realizar la validación y la llamada al servicio REST
-        // Si hay errores de validación, actualiza el estado de errores
+        //arrey con los errores de registro
         let errors = [];
   
         // Validaciones
@@ -121,12 +119,11 @@ export default createStore({
         if (payload.contrasena !== payload.repetirContrasena) {
           errors.push("Las contraseñas no coinciden");
         }
-        // Otras validaciones...
   
         if (errors.length > 0) {
           commit('SET_REGISTRO_ERRORS', errors);
         } else {
-          // Simulando una respuesta exitosa del servicio REST
+          // Llamada al servicio de registro de usuario si la respuesta es exitosa
           const response = {
             data: {
               respuestaRegistro: {
@@ -135,8 +132,11 @@ export default createStore({
               }
             }
           };
+          // Seteamos el estado de registro exitoso
           commit('SET_SUCCESS_REGISTER', response.data.respuestaRegistro);
+          // Limpiamos el registro de errores
           commit('CLEAR_REGISTRO_ERRORS');
+          // Redirigimos a la vista de éxito
           router.push('/success');
         }
       } catch (error) {

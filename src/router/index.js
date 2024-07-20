@@ -14,7 +14,7 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    meta:{ requiresAuth: false }
+    meta:{ requiresAuth: true }
   },
   {
     path: '/login',
@@ -30,13 +30,13 @@ const routes = [
     path: '/products',
     name: 'products',
     component : ProductsView,
-    meta:{ requiresAuth: false }
+    meta:{ requiresAuth: true }
   },
   {
     path: '/products/:id',
     name: 'detailProduct',
     component : DetailProducs,
-    meta:{ requiresAuth: false },
+    meta:{ requiresAuth: true },
     props: true //Permite pasar props como parámetros a la ruta
   },
   {

@@ -48,22 +48,29 @@ export default {
     };
   },
   computed: {
+    //Mapear getter de registro de errores de vuex al comeponente
     ...mapGetters(['registroErrors'])
   },
   methods: {
     ...mapActions(['register']),
+
+    //Funcion para redirigir al login
     goToLogin() {
       this.$router.push('/login');
     },
+    //Funcion para registrar un ususario
     handleRegister() {
+      //llamar a los datos del formulario
       const payload = {
         email: this.email,
         telefono: this.telefono,
         contrasena: this.contrasena,
         repetirContrasena: this.repetirContrasena
       };
+      //llamar a la accion de registro
       this.register(payload).then(() => {
         if (!this.registroErrors.length) {
+          //redirigir a la página de registro exitoso
           this.$router.push('/success');
         }
       });

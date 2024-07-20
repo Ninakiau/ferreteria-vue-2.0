@@ -75,6 +75,7 @@
       FooterVue
     },
     computed: {
+        //traemos los getters con la informacion de la home store
       ...mapGetters(['inventario', 'proveedores', 'promociones', 'redesSociales', 'direccion', 'telefonos']),
     }
   }
@@ -86,12 +87,12 @@
     border-width: 1px;
     border-color: rgb(88, 87, 87);
     border-radius: 1rem;
-    margin: 1rem;
+    margin: .5rem;
     padding: 1rem;
   }
   .container-productos {
     background-color: rgb(202, 202, 202);
-    margin: 2rem;
+    margin: 1rem;
     padding: 1rem;
     height: 25vh;
   }
@@ -102,7 +103,10 @@
   .table td, .table th {
     white-space: normal; /* Permite el ajuste del texto */
     word-wrap: break-word; /* Ajusta el texto dentro de las celdas */
-    max-width: 200px; /* Ajusta este valor según tus necesidades */
+    max-width: .0rem; /* Ajusta este valor según tus necesidades */
+  }
+  td, th{
+    word-wrap: break-word;
   }
   </style>
   

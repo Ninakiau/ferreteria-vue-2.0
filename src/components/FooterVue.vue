@@ -9,11 +9,11 @@
                 <a :href="redesSociales.twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
             </div>
         </div>
-        <div>
+        <div class="d-flex flex-column justify-content-space-evenly gap-1">
             <h5>Contacto</h5>
-            <div>
-                <p c> {{ direccion }}</p>
-                <ul class="d-flex gap-2">
+            <div class="d-flex flex-wrap justify-content-center flex-column align-items-center">
+                <p class="direccion"> {{ direccion }}</p>
+                <ul class="d-flex gap-2 flex-wrap justify-content-center align-items-center">
                     <li v-for="telefono in telefonos" :key="telefono" class="list-unstyled ">{{ telefono }}</li>
                 </ul>
             </div>
@@ -37,5 +37,12 @@ a,i{
     color: black;
     
 
+}
+.direccion{
+    word-wrap: break-word;
+}
+p{
+font-size: .8rem;
+word-wrap: break-word;
 }
 </style>

@@ -44,14 +44,15 @@ export default {
   },
   computed: {
     ...mapGetters(['getProductDetails']),
+
+    // Obtener el producto a travez del id pasado por la url
     product() {
       const product = this.getProductDetails(this.id);
-      console.log('Computed product:', product); // Log para verificar el producto obtenido
       return product;
     }
   },
   created() {
-    console.log('Component created with id:', this.id); // Log para verificar la creación del componente
+    //Una vez creado el componente, llamar a la accion que llama a la API que nos devolverá los detalles del producto
     this.fetchProductDetails(this.id);
   },
   methods: {
